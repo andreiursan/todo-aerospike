@@ -5,7 +5,7 @@
 (defn status-endpoint [{db :db}]
   (routes
    (GET "/status" []
-        (let [db (:db db)
-              nodes (.getNodes db)
-              first-node (first nodes)]
+        (let [conn (:conn db)
+              first-node (first (.getNodes conn))]
           (str (. Info request nil first-node))))))
+

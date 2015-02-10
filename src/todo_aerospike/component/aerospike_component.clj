@@ -7,19 +7,19 @@
 (defn connect-to-database [host port]
   (new AerospikeClient host port))
 
-(defrecord AerospikeComponent [host port db]
+(defrecord AerospikeComponent [host port conn]
   ;; Implement the Lifecycle protocol
   component/Lifecycle
 
   (start [component]
     (println ";; Starting database")
-    (let [db (connect-to-database host port)]
-      (assoc component :db db)))
+    (let [conn (connect-to-database host port)]
+      (assoc component :conn conn)))
 
   (stop [component]
     (println ";; Stopping database")
-    (.close db)
-    (assoc component :db nil)))
+    (.close conn)
+    (assoc component :conn nil)))
 
 (defn aerospike-component [host port]
   (map->AerospikeComponent {:host host :port port}))
