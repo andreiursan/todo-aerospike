@@ -10,7 +10,9 @@
                  [meta-merge "0.1.1"]
                  [ring "1.3.2"]
                  [ring/ring-defaults "0.1.3"]
-                 [ring-jetty-component "0.2.2"]]
+                 [ring-jetty-component "0.2.2"]
+                 [com.aerospike/aerospike-client "3.0.34"]]
+
   :plugins [[lein-environ "1.0.0"]
             [lein-gen "0.2.2"]]
   :generators [[duct/generators "0.1.0"]]
