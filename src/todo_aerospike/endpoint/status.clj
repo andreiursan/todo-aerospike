@@ -3,4 +3,4 @@
 
 (defn status-endpoint [config]
   (routes
-   (GET "/" [] "Hello World")))
+   (GET "/status" [] "the server status is")))
