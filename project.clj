@@ -33,7 +33,7 @@
    :project/dev   {:source-paths ["dev"]
                    :repl-options {:init-ns user}
                    :dependencies [[reloaded.repl "0.1.0"]
-                                  [org.clojure/tools.namespace "0.2.8"]
+                                  [org.clojure/tools.namespace "0.2.9"]
                                   [kerodon "0.5.0"]]
                    :env {:port 3000}}
    :project/test  {}})
