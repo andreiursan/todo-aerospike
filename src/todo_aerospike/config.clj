@@ -2,7 +2,7 @@
   (:require [environ.core :refer [env]]))
 
 (def defaults
-  ^:displace {:http {:port 3000}})
+  ^:displace {:http {:port 9000}})
 
 (def environ
   {:http {:port (some-> env :port Integer.)}})

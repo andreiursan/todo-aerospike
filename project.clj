@@ -35,5 +35,5 @@
                    :dependencies [[reloaded.repl "0.1.0"]
                                   [org.clojure/tools.namespace "0.2.9"]
                                   [kerodon "0.5.0"]]
-                   :env {:port 3000}}
+                   :env {:port 9000}}
    :project/test  {}})
