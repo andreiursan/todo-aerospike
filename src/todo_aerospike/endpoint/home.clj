@@ -3,4 +3,4 @@
 
 (defn home-endpoint [config]
   (routes
-   (GET "/" [] "Hello World")))
+   (GET "/" [] "HOME: Hello Berlin Clojurians!")))
