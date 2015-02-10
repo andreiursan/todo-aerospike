@@ -25,8 +25,7 @@
          :db     (aerospike-component "127.0.0.1" 3000)
          :home   (endpoint-component home-endpoint)
          :status (endpoint-component status-endpoint)
-         :todo   (endpoint-component todo-endpoint)
-         )
+         :todo   (endpoint-component todo-endpoint))
         (component/system-using
          {:http [:app]
           :app  [:home :status :todo]
