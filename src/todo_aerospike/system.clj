@@ -22,7 +22,7 @@
     (-> (component/system-map
          :app  (handler-component (:app config))
          :http (jetty-server (:http config))
-         :db     (aerospike-component "127.0.0.1" 3000)
+         :db     (aerospike-component (:db config))
          :home   (endpoint-component home-endpoint)
          :status (endpoint-component status-endpoint)
          :todo   (endpoint-component todo-endpoint))

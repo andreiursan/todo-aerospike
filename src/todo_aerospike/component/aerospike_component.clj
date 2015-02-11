@@ -21,5 +21,5 @@
     (.close conn)
     (assoc component :conn nil)))
 
-(defn aerospike-component [host port]
-  (map->AerospikeComponent {:host host :port port}))
+(defn aerospike-component [conf]
+  (map->AerospikeComponent conf))
