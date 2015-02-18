@@ -1,11 +1,7 @@
 (ns todo-aerospike.endpoint.status
-  (:require [compojure.core :refer :all])
-  (:import [com.aerospike.client Info]))
-
-(defn node-status [conn]
-  (let [first-node (.. conn getNodes first)]
-    (str (. Info request nil first-node))))
+  (:require [compojure.core :refer :all]
+            [todo-aerospike.domain.utils.db :refer [nodes-statuses]]))
 
 (defn status-endpoint [{db :db}]
   (routes
-   (GET "/status" [] (node-status (:conn db)))))
+   (GET "/status" [] (nodes-statuses (:conn db)))))

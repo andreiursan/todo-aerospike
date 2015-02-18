@@ -1,8 +1,6 @@
 (ns todo-aerospike.component.aerospike-component
   (:require [com.stuartsierra.component :as component])
-  (:import [com.aerospike.client AerospikeClient Info]
-           [com.aerospike.client.policy Policy WritePolicy]
-           [com.aerospike.client.cluster Node]))
+  (:import [com.aerospike.client AerospikeClient]))
 
 (defn connect-to-database [host port]
   (new AerospikeClient host port))
