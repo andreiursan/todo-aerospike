@@ -15,9 +15,10 @@
 
 (defn uuid [] (str (java.util.UUID/randomUUID)))
 
-(defn create [conn data]
+(defn put [conn record]
   "[C]RUD creates a record"
-  (let [bin (new Bin (:column-name data) (:value data))
-        key (new Key key-namespace (:set-name data) (uuid))]
+  (let [bin (new Bin (:column record) (:value record))
+        key (new Key key-namespace (:set record) (uuid))]
         (. conn put write-policy key (into-array [bin]))))
+
 
