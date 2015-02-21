@@ -19,5 +19,5 @@
   "[C]RUD creates a record"
   (let [bin (new Bin (:column-name data) (:value data))
         key (new Key key-namespace (:set-name data) (uuid))]
-        (. conn put write-policy key bin)))
+        (. conn put write-policy key (into-array [bin]))))
 
